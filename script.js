@@ -20,14 +20,14 @@ function spinWheel() {
     document.querySelector('button').disabled = false;
     wheel.style.transition = 'none';
     setTimeout(() => {
-      wheel.style.transition = 'transform 5s cubic-bezier(0.17, 0.67, 0.83, 0.67)';
+      wheel.style.transition = 'transform 2s cubic-bezier(0.17, 0.67, 0.83, 0.67)';
     });
     // Calculate and display the result section number
     const resultSection = Math.floor(((randomDegree + 1800) % 360) / (360 / sections.length)) + 1;
     resultTextbox.value = `Result: ${resultSection}`;
   });
 
-  // Start the spin
-  wheel.style.transform = `rotate(${randomDegree + 1800}deg)`;
+  // Start the spin (twice as fast for 5 seconds)
+  wheel.style.transition = 'transform 5s cubic-bezier(0.17, 0.67, 0.83, 0.67)';
+  wheel.style.transform = `rotate(${randomDegree + 3600}deg)`;
 }
-
