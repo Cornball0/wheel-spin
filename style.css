@@ -6,6 +6,7 @@ body {
   height: 100vh;
   margin: 0;
   font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0; /* Background color inspired by the provided website */
 }
 
 .wheel {
@@ -13,7 +14,8 @@ body {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  border: 5px solid black;
+  border: 10px solid #222; /* Wheel border color inspired by the provided website */
+  background: radial-gradient(circle, #111 20%, #000 80%); /* Gradient inspired by the provided website */
   overflow: hidden;
 }
 
@@ -28,6 +30,14 @@ body {
   transition: transform 5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
+.section:nth-child(odd) {
+  background-color: #e74c3c; /* Red color inspired by the provided website */
+}
+
+.section:nth-child(even) {
+  background-color: #3498db; /* Blue color inspired by the provided website */
+}
+
 input {
   margin-top: 10px;
   font-size: 16px;
@@ -40,4 +50,8 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  background-color: #27ae60; /* Green color inspired by the provided website */
+  color: #fff; /* White text color inspired by the provided website */
+  border: none;
+  border-radius: 5px;
 }
