@@ -1,4 +1,10 @@
+let spinning = false;
+
 function spinWheel() {
+  if (spinning) {
+    return; // Avoid spinning when it's already in progress
+  }
+
   const wheel = document.querySelector('.wheel');
   const sections = document.querySelectorAll('.section');
   const resultTextbox = document.getElementById('result');
@@ -14,6 +20,7 @@ function spinWheel() {
 
   // Disable the button during the spin
   document.querySelector('button').disabled = true;
+  spinning = true;
 
   // Add a transition end event listener to reset the button and remove the transition effect
   wheel.addEventListener('transitionend', () => {
@@ -21,6 +28,7 @@ function spinWheel() {
     wheel.style.transition = 'none';
     setTimeout(() => {
       wheel.style.transition = 'transform 2s cubic-bezier(0.17, 0.67, 0.83, 0.67)';
+      spinning = false;
     });
     // Calculate and display the result section number
     const resultSection = Math.floor(((randomDegree + 1800) % 360) / (360 / sections.length)) + 1;
