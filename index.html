@@ -4,21 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Spinning Wheel</title>
+  <title>Roulette Wheel</title>
 </head>
 <body>
   <div class="wheel">
-    <div class="section" style="--rotate: 0deg; background-color: red;"></div>
-    <div class="section" style="--rotate: 36deg; background-color: orange;"></div>
-    <div class="section" style="--rotate: 72deg; background-color: yellow;"></div>
-    <div class="section" style="--rotate: 108deg; background-color: green;"></div>
-    <div class="section" style="--rotate: 144deg; background-color: blue;"></div>
-    <div class="section" style="--rotate: 180deg; background-color: indigo;"></div>
-    <div class="section" style="--rotate: 216deg; background-color: violet;"></div>
-    <div class="section" style="--rotate: 252deg; background-color: pink;"></div>
-    <div class="section" style="--rotate: 288deg; background-color: brown;"></div>
-    <div class="section" style="--rotate: 324deg; background-color: gray;"></div>
+    <div class="section" data-section="1" style="--rotate: 0deg; background-color: red;"></div>
+    <div class="section" data-section="2" style="--rotate: 36deg; background-color: orange;"></div>
+    <div class="section" data-section="3" style="--rotate: 72deg; background-color: yellow;"></div>
+    <div class="section" data-section="4" style="--rotate: 108deg; background-color: green;"></div>
+    <div class="section" data-section="5" style="--rotate: 144deg; background-color: blue;"></div>
+    <div class="section" data-section="6" style="--rotate: 180deg; background-color: indigo;"></div>
+    <div class="section" data-section="7" style="--rotate: 216deg; background-color: violet;"></div>
+    <div class="section" data-section="8" style="--rotate: 252deg; background-color: pink;"></div>
+    <div class="section" data-section="9" style="--rotate: 288deg; background-color: brown;"></div>
+    <div class="section" data-section="10" style="--rotate: 324deg; background-color: gray;"></div>
   </div>
+  <input type="text" id="result" readonly>
   <button onclick="spinWheel()">Spin</button>
   <script src="script.js"></script>
 </body>
