@@ -1,6 +1,7 @@
 function spinWheel() {
   const wheel = document.querySelector('.wheel');
   const sections = document.querySelectorAll('.section');
+  const resultTextbox = document.getElementById('result');
 
   // Generate a random degree for the wheel to spin
   const randomDegree = Math.floor(Math.random() * 360);
@@ -21,8 +22,12 @@ function spinWheel() {
     setTimeout(() => {
       wheel.style.transition = 'transform 5s cubic-bezier(0.17, 0.67, 0.83, 0.67)';
     });
+    // Calculate and display the result section number
+    const resultSection = Math.floor(((randomDegree + 1800) % 360) / (360 / sections.length)) + 1;
+    resultTextbox.value = `Result: ${resultSection}`;
   });
 
   // Start the spin
   wheel.style.transform = `rotate(${randomDegree + 1800}deg)`;
 }
+
